@@ -25,6 +25,21 @@ This suite contains **four independent projects**. Simulations are functional, b
 3. Read [`line-follower-real-implementation`](line-follower-real-implementation) before connecting to real hardware, and always run its shadow test first.
 4. Explore [`target-reaching-obstacle-avoidance`](target-reaching-obstacle-avoidance) for the broader RL methodology: algorithm comparison, sparse-reward techniques, curriculum learning, and a hybrid classical/RL pipeline.
 
+## Time investment (130h)
+
+```mermaid
+pie showData
+    title Project time breakdown — 130h total
+    "Reinforcement Learning (SAC, HER, reward design)" : 35
+    "Python Engineering (envs, wrappers, pipelines)" : 20
+    "ROS2 / Gazebo Integration" : 20
+    "Computer Vision (KLT, HSV, calibration)" : 15
+    "Robust / Optimal Control (LQR)" : 13
+    "State Estimation (EKF / Kalman)" : 12
+    "Robotics Modeling & Kinematics (DH, IK/FK)" : 10
+    "Real Robot Deployment & Debugging" : 5
+```
+
 ## Important notes
 
 ### Sim-to-real gap
