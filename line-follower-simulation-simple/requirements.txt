@@ -1,0 +1,10 @@
+# Dépendances Python portables pour le lot UR7e LineFollower SimpleModel
+# Les paquets ROS 2 (rclpy, robot_state_publisher, rviz2, sensor_msgs, etc.)
+# doivent être installés via ROS 2 Humble/Jazzy, pas via pip.
+
+numpy<2.0
+matplotlib
+ikpy
+gymnasium
+stable-baselines3
+torch

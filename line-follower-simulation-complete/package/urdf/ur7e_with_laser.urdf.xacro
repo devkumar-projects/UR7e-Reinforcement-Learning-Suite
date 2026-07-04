@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<!-- ur7e_with_laser.urdf.xacro
+  UR7e arm with a laser pointer end-effector instead of a gripper.
+  The laser pointer is a visual-only cylinder attached to tool0.
+  The laser beam direction is the tool0 Z-axis.
+  No gripper joints, no DetachableJoint plugin. -->
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="ur">
+
+  <xacro:arg name="name"           default="ur"/>
+  <xacro:arg name="ur_type"        default="ur7e"/>
+  <xacro:arg name="tf_prefix"      default=""/>
+  <xacro:arg name="joint_limit_params"
+    default="$(find ur_description)/config/$(arg ur_type)/joint_limits.yaml"/>
+  <xacro:arg name="kinematics_params"
+    default="$(find ur_description)/config/$(arg ur_type)/default_kinematics.yaml"/>
+  <xacro:arg name="physical_params"
+    default="$(find ur_description)/config/$(arg ur_type)/physical_parameters.yaml"/>
+  <xacro:arg name="visual_params"
+    default="$(find ur_description)/config/$(arg ur_type)/visual_parameters.yaml"/>
+  <xacro:arg name="transmission_hw_interface" default=""/>
+  <xacro:arg name="safety_limits"       default="false"/>
+  <xacro:arg name="safety_pos_margin"   default="0.15"/>
+  <xacro:arg name="safety_k_position"   default="20"/>
+  <xacro:arg name="simulation_controllers" default=""/>
+  <xacro:arg name="ros_namespace"       default=""/>
+
+  <xacro:include filename="$(find ur_description)/urdf/ur_macro.xacro"/>
+  <xacro:include filename="$(find ur_simulation_gz)/urdf/ur_gz.ros2_control.xacro"/>
+
+  <link name="world"/>
+  <link name="ground_plane">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><box size="5 5 0"/></geometry>
+      <material name="ground_white"><color rgba="1 1 1 0.3"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><box size="5 5 0"/></geometry>
+    </collision>
+  </link>
+  <joint name="ground_plane_joint" type="fixed">
+    <origin xyz="0 0 -0.01" rpy="0 0 0"/>
+    <parent link="world"/>
+    <child link="ground_plane"/>
+  </joint>
+
+  <!-- UR7e arm (no gripper) -->
+  <xacro:ur_robot
+    name="$(arg name)"
+    tf_prefix="$(arg tf_prefix)"
+    parent="world"
+    joint_limits_parameters_file="$(arg joint_limit_params)"
+    kinematics_parameters_file="$(arg kinematics_params)"
+    physical_parameters_file="$(arg physical_params)"
+    visual_parameters_file="$(arg visual_params)"
+    safety_limits="$(arg safety_limits)"
+    safety_pos_margin="$(arg safety_pos_margin)"
+    safety_k_position="$(arg safety_k_position)"
+    force_abs_paths="true"
+  >
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </xacro:ur_robot>
+
+  <!-- Joint dynamics (same heuristics as pick-and-place for consistent simulation) -->
+  <gazebo reference="shoulder_pan_joint">
+    <dynamics damping="2.0" friction="8.0"/>
+  </gazebo>
+  <gazebo reference="shoulder_lift_joint">
+    <dynamics damping="2.5" friction="10.0"/>
+  </gazebo>
+  <gazebo reference="elbow_joint">
+    <dynamics damping="1.5" friction="6.0"/>
+  </gazebo>
+  <gazebo reference="wrist_1_joint">
+    <dynamics damping="0.4" friction="2.0"/>
+  </gazebo>
+  <gazebo reference="wrist_2_joint">
+    <dynamics damping="0.4" friction="2.0"/>
+  </gazebo>
+  <gazebo reference="wrist_3_joint">
+    <dynamics damping="0.3" friction="1.5"/>
+  </gazebo>
+
+  <!-- gz_ros2_control plugin — arm only (no gripper) -->
+  <gazebo reference="world"/>
+  <gazebo>
+    <plugin filename="gz_ros2_control-system"
+            name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+      <parameters>$(arg simulation_controllers)</parameters>
+      <ros><namespace>$(arg ros_namespace)</namespace></ros>
+    </plugin>
+  </gazebo>
+
+  <ros2_control name="$(arg name)" type="system">
+    <hardware>
+      <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+    </hardware>
+    <xacro:ur_joint_control_description
+      tf_prefix="$(arg tf_prefix)"
+      initial_positions="${dict(shoulder_pan_joint=-0.133,shoulder_lift_joint=-1.5707963267948966,elbow_joint=1.5707963267948966,wrist_1_joint=0.0,wrist_2_joint=1.5707963267948966,wrist_3_joint=0.0)}"
+    />
+  </ros2_control>
+
+  <!-- Laser pointer body (visual only, no collision, no mass) -->
+  <link name="laser_body_link">
+    <visual>
+      <!-- Housing cylinder -->
+      <origin xyz="0 0 0.03" rpy="0 0 0"/>
+      <geometry><cylinder radius="0.015" length="0.06"/></geometry>
+      <material name="laser_black"><color rgba="0.15 0.15 0.15 1"/></material>
+    </visual>
+  </link>
+  <joint name="laser_body_joint" type="fixed">
+    <parent link="tool0"/>
+    <child link="laser_body_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Laser emitter tip (red cylinder at the front) -->
+  <link name="laser_emitter_link">
+    <visual>
+      <origin xyz="0 0 0.005" rpy="0 0 0"/>
+      <geometry><cylinder radius="0.005" length="0.01"/></geometry>
+      <material name="laser_red"><color rgba="1.0 0.0 0.0 1"/></material>
+    </visual>
+  </link>
+  <joint name="laser_emitter_joint" type="fixed">
+    <parent link="laser_body_link"/>
+    <child link="laser_emitter_link"/>
+    <origin xyz="0 0 0.06" rpy="0 0 0"/>
+  </joint>
+
+  <!-- V2.2 : la caméra n'est plus montée sur l'effecteur.
+       Le capteur eye-to-hand statique est défini dans worlds/line_follower.sdf. -->
+
+</robot>

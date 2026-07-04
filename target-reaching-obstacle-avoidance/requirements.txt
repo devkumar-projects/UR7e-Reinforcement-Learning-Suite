@@ -1,0 +1,51 @@
+# ==============================================================================
+# Dépendances Python du projet UR7e — Apprentissage par renforcement
+# ==============================================================================
+# Ce projet contient DEUX approches qui reposent sur des piles incompatibles
+# entre elles. Installer chacune dans un environnement virtuel SÉPARÉ :
+#
+#   - dossier 1 (moteurs maison SB3)  -> PyTorch / Stable-Baselines3
+#   - dossier 3 (3 phases tf-agents)  -> TensorFlow / tf-agents
+#
+# tf-agents et stable-baselines3 entrent en conflit (typing-extensions, etc.),
+# ils ne doivent PAS cohabiter dans le même venv.
+# ==============================================================================
+
+
+# ------------------------------------------------------------------------------
+# COMMUN aux deux approches (simulation, calcul, tracé)
+# ------------------------------------------------------------------------------
+numpy
+scipy
+matplotlib
+pybullet
+tqdm
+
+
+# ------------------------------------------------------------------------------
+# APPROCHE 1 — Moteurs maison SB3 (dossier 1_moteurs_maison_sb3/)
+# ------------------------------------------------------------------------------
+# venv dédié : venv_sb3
+#   python3 -m venv venv_sb3 && source venv_sb3/bin/activate
+#   pip install numpy scipy matplotlib pybullet tqdm stable-baselines3 gymnasium torch
+stable-baselines3
+gymnasium
+torch
+
+
+# ------------------------------------------------------------------------------
+# APPROCHE 3 — 3 phases tf-agents (dossier 3_phases_tfagents/)
+# ------------------------------------------------------------------------------
+# venv dédié : venv_fred
+#   python3 -m venv venv_fred && source venv_fred/bin/activate
+#   pip install numpy scipy matplotlib pybullet tqdm "tensorflow==2.15.*" "tf-agents==0.19.*"
+# Versions testées : TensorFlow 2.15.x + tf-agents 0.19.x (Keras 2).
+tensorflow==2.15.*
+tf-agents==0.19.*
+
+
+# ------------------------------------------------------------------------------
+# NOTE — sur macOS Intel : aucune accélération GPU pour TensorFlow.
+# Préfixer les entraînements longs par `caffeinate -i` (évite la mise en veille
+# qui fausse les temps mesurés).
+# ------------------------------------------------------------------------------

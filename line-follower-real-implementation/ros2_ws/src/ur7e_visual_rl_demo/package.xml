@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>ur7e_visual_rl_demo</name>
+  <version>1.0.0</version>
+  <description>Real UR7e visual laser line follower with SAC, KLT, EKF, calibrated kinematics and LQR.</description>
+  <maintainer email="devk79036@gmail.com">Dev Kumar</maintainer>
+  <license>MIT</license>
+  <buildtool_depend>ament_python</buildtool_depend>
+  <depend>rclpy</depend>
+  <depend>sensor_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>trajectory_msgs</depend>
+  <depend>control_msgs</depend>
+  <depend>action_msgs</depend>
+  <exec_depend>python3-numpy</exec_depend>
+  <exec_depend>python3-opencv</exec_depend>
+  <exec_depend>python3-yaml</exec_depend>
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+  <exec_depend>ur_robot_driver</exec_depend>
+  <exec_depend>v4l2_camera</exec_depend>
+  <exec_depend>rqt_image_view</exec_depend>
+  <export><build_type>ament_python</build_type></export>
+</package>

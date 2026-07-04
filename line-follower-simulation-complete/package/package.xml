@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>ur7e_line_follower</name>
+  <version>3.3.0</version>
+  <description>RL line-following for UR7e in Gazebo Harmonic — laser pointer on vertical wall.</description>
+  <maintainer email="devk79036@gmail.com">Dev Kumar</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>ament_python</buildtool_depend>
+
+  <depend>rclpy</depend>
+  <depend>std_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>tf2_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>ros_gz_sim</depend>
+  <depend>ros_gz_bridge</depend>
+  <depend>robot_state_publisher</depend>
+  <depend>controller_manager</depend>
+  <depend>ur_description</depend>
+  <depend>ur_simulation_gz</depend>
+  <depend>gz_ros2_control</depend>
+  <depend>velocity_controllers</depend>
+  <depend>joint_state_broadcaster</depend>
+
+  <depend>ros_gz_image</depend>
+  <depend>rosgraph_msgs</depend>
+  <depend>launch</depend>
+  <depend>launch_ros</depend>
+  <depend>ament_index_python</depend>
+  <depend>xacro</depend>
+  <exec_depend>python3-numpy</exec_depend>
+  <exec_depend>python3-opencv</exec_depend>
+  <exec_depend>python3-matplotlib</exec_depend>
+  <exec_depend>python3-pandas</exec_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>

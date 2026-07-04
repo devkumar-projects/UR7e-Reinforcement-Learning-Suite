@@ -1,0 +1,10 @@
+numpy>=1.24
+scipy>=1.10
+opencv-python>=4.8
+matplotlib>=3.7
+pandas>=2.0
+gymnasium>=0.29,<2
+stable-baselines3>=2.3,<3
+tensorboard>=2.14
+rich>=13
+plotly>=5.18

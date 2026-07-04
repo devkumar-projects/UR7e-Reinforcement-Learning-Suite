@@ -1,0 +1,8 @@
+{
+  "observation_schema_version": 5,
+  "obs_shape": 33,
+  "action_shape": 2,
+  "control_schema_version": 2,
+  "reward_profile": "normalized_huber",
+  "note": "meta généré pour compatibilité — modèle entraîné offline par Basile (60k steps level2)"
+}
