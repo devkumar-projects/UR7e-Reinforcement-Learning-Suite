@@ -3,6 +3,14 @@
 A UR7e learns to track a laser-pointed line on a wall in Gazebo, combining reinforcement learning with a classical estimation/control stack: **SAC + HER, Extended Kalman Filter, LQR singularity-adaptive control, and Monte Carlo trajectory generation.**
 
 <p align="center">
+  <a href="https://youtube.com/shorts/vd7ZUFQKB6c?feature=share">
+    <img src="https://img.youtube.com/vi/vd7ZUFQKB6c/maxresdefault.jpg" alt="UR7e Line Follower — watch the simulation on YouTube" width="500">
+  </a>
+  <br>
+  <em>▶️ <a href="https://youtube.com/shorts/vd7ZUFQKB6c?feature=share">Watch the full simulation on YouTube</a></em>
+</p>
+
+<p align="center">
   <img src="docs/plots/00_dashboard.png" alt="UR7e Line Follower dashboard" width="800">
 </p>
 
