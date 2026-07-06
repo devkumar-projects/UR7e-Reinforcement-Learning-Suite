@@ -34,10 +34,6 @@ And
   <em>▶️ <a href="https://youtube.com/shorts/vd7ZUFQKB6c?feature=share">Watch the full simulation on YouTube</a></em>
 </p>
 
-<p align="center">
-  <img src="docs/plots/00_dashboard.png" alt="UR7e Line Follower dashboard" width="800">
-</p>
-
 
 ## Quick overview
 
