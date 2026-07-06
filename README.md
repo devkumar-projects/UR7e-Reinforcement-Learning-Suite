@@ -24,14 +24,6 @@ Reinforcement learning for a Universal Robots **UR7e** cobot: line following (si
   </em>
 </p>
 
-<p align="center">
-  <img
-    src="docs/plots/00_dashboard.png"
-    alt="UR7e Line Follower dashboard"
-    width="800"
-  >
-</p>
-
 ## Quick overview
 
 This suite contains **four independent projects**. Simulations are functional, but the full transfer onto the real robot is **not validated end-to-end**: the vision/KLT chain loses the laser dot during motion, which currently blocks closed-loop control on hardware — see the [real-implementation README](line-follower-real-implementation) for details.
