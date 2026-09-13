@@ -15,8 +15,20 @@ wait_topic() {
   echo; echo "[ERREUR] Topic absent: $topic"; return 1
 }
 
+check_model() {
+  [[ -n "${MODEL_SHA256:-}" ]] || {
+    echo "[ERREUR] MODEL_SHA256 absent de la configuration." >&2
+    return 2
+  }
+  ros2 run ur7e_visual_rl_demo model_check --ros-args     -p model_path:="$MODEL_FILE"     -p expected_sha256:="$MODEL_SHA256"
+}
+
 start_stack() {
   local debug="${1:-false}"
+  [[ "$ROBOT_IP" != "CHANGE_ME" ]] || {
+    echo "[ERREUR] ROBOT_IP n'est pas configuré dans config/real.env." >&2
+    return 2
+  }
   [[ -s "$CALIBRATION_FILE" ]] || { echo "[ERREUR] Calibration UR absente. Lance: ./MAIN.sh extract-calibration"; return 2; }
   CAMERA="$($ROOT/scripts/detect_camera.sh)"
   echo "[OK] Caméra couleur: $CAMERA"
@@ -74,6 +86,7 @@ case "$MODE" in
     ;;
   shadow)
     [[ -s "$CAMERA_HOMOGRAPHY_FILE" ]] || { echo '[ERREUR] Homographie absente. Lance: ./MAIN.sh calibrate'; exit 2; }
+    check_model
     start_stack false
     "$HOME/venv_ur7e_visual_rl/bin/python" -u -m ur7e_visual_rl_demo.visual_policy_runner --ros-args \
       -p model_path:="$MODEL_FILE" -p calibration_file:="$CALIBRATION_FILE" \
@@ -87,6 +100,7 @@ case "$MODE" in
     ;;
   demo)
     [[ -s "$CAMERA_HOMOGRAPHY_FILE" ]] || { echo '[ERREUR] Homographie absente. Lance: ./MAIN.sh calibrate'; exit 2; }
+    check_model
     echo 'ATTENTION: déplacement réel du UR7e.'
     read -r -p 'Tape MOVE_UR7E_CAMERA_LASER_RL : ' CONFIRM
     [[ "$CONFIRM" == MOVE_UR7E_CAMERA_LASER_RL ]] || { echo 'Annulé.'; exit 2; }
