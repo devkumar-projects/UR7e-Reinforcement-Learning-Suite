@@ -43,7 +43,7 @@ Encoders + TCP → calibrated forward kinematics → EKF
 Default configuration:
 
 ```text
-ROBOT_IP=192.168.186.141
+ROBOT_IP=CHANGE_ME  # set the real address locally in config/real.env
 VIDEO_DEVICE=AUTO
 CAMERA=1280x720 YUYV 15 fps
 ```
@@ -139,9 +139,10 @@ After building and sourcing the workspace:
 ```bash
 source /opt/ros/jazzy/setup.bash
 source ros2_ws/install/local_setup.bash
+export ROBOT_IP=YOUR_ROBOT_IP
 
 ros2 launch ur7e_visual_rl_demo system.launch.py \
-  robot_ip:=192.168.186.141 \
+  robot_ip:="$ROBOT_IP" \
   ur_type:=ur7e \
   calibration_file:=$HOME/.ros/ur7e_line_follower/ur7e_calibration.yaml \
   video_device:=/dev/video4 \
