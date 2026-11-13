@@ -87,6 +87,12 @@ The Target Reaching / Obstacle Avoidance batch requires an external `ur7e_pybull
 
 Each subfolder keeps its own README and commands — this root README is orientation only.
 
+## Related projects
+
+- [UR5e RL Pick-and-Place](https://github.com/devkumar-projects/ur5e-ReinforcementLearning-pick-and-place) — SAC and HER for grasp-and-place in ROS 2 and Gazebo.
+- [TurtleBot3 ROS 2 Navigation](https://github.com/devkumar-projects/TurtleBot3-ROS2-Navigation-Challenges) — LiDAR and camera-based mobile robot navigation in simulation.
+- [Classical Computer Vision Toolkit](https://github.com/devkumar-projects/Classical-Computer-Vision-Toolkit) — optical flow, pose estimation and point-cloud registration.
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
