@@ -5,7 +5,7 @@
 ![RL](https://img.shields.io/badge/RL-SAC%20%7C%20PPO%20%7C%20HER-orange)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-Reinforcement learning for a Universal Robots **UR7e** cobot: line following (simulation and real sim-to-real deployment), target reaching, and obstacle avoidance — with kinematic tools, sensor fusion (EKF), and a scientific SAC-vs-PPO comparison.
+Reinforcement learning for a Universal Robots **UR7e** cobot: line following in simulation with a partial real-robot implementation, target reaching, and obstacle avoidance — with kinematic tools, sensor fusion (EKF), and a scientific SAC-vs-PPO comparison.
 
 <p align="center">
   <a href="https://youtube.com/shorts/--WNZJovDO4?feature=share">
