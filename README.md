@@ -91,8 +91,9 @@ Each subfolder keeps its own README and commands — this root README is orienta
 
 - [UR7e Reinforcement Learning Training Log Analysis](https://www.kaggle.com/code/devkumarkaggle/ur7e-reinforcement-learning-training-log-analysis) — descriptive analysis of a public simulated training log, not a held-out or physical-robot evaluation.
 - [Generating Robot Drawing Trajectories on CPU](https://www.kaggle.com/code/devkumarkaggle/generating-robot-drawing-trajectories-on-cpu) — reproducible samples from the geometric trajectory generator, without a simulator.
-
 - [UR7e Data Quality and Failure Analysis](https://www.kaggle.com/code/devkumarkaggle/ur7e-data-quality-and-failure-analysis) — checks the data and explores episode-end summaries in one simulated run.
+
+- [UR7e Laser Point Tracking with Kalman Filter](https://www.kaggle.com/code/devkumarkaggle/ur7e-laser-point-tracking-with-kalman-filter) — a CPU-only exploration of the project filter using synthetic observations; it does not validate physical hardware.
 
 ## Reusable training data on Kaggle
 
