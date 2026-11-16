@@ -83,7 +83,7 @@ Generates a 3D figure: target trajectory (green) vs. actual tracking (blue).
 
 ## Technical architecture
 
-- **Kinematics**: ikpy on the official UR7e URDF (no sim-to-real gap)
+- **Kinematics**: ikpy on the official UR7e URDF for simulation; the kinematic model alone does not validate sim-to-real transfer
 - **Algorithm**: SAC (Soft Actor-Critic), off-policy, continuous control
 - **Observation**: 29 values (6 joint angles + 3 position + progress + phase + target point + 5 lookahead points)
 - **Action**: 6 joint-angle deltas
