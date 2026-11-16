@@ -92,6 +92,12 @@ Each subfolder keeps its own README and commands — this root README is orienta
 - [UR7e Reinforcement Learning Training Log Analysis](https://www.kaggle.com/code/devkumarkaggle/ur7e-reinforcement-learning-training-log-analysis) — descriptive analysis of a public simulated training log, not a held-out or physical-robot evaluation.
 - [Generating Robot Drawing Trajectories on CPU](https://www.kaggle.com/code/devkumarkaggle/generating-robot-drawing-trajectories-on-cpu) — reproducible samples from the geometric trajectory generator, without a simulator.
 
+- [UR7e Data Quality and Failure Analysis](https://www.kaggle.com/code/devkumarkaggle/ur7e-data-quality-and-failure-analysis) — checks the data and explores episode-end summaries in one simulated run.
+
+## Reusable training data on Kaggle
+
+- [UR7e Simulated Robot Line-Following Training Log](https://www.kaggle.com/datasets/devkumarkaggle/ur7e-simulated-robot-line-following-training-log) — the original MIT-licensed Monitor log (520 training episodes), with field definitions and a runnable analysis. This single simulated training run is not a held-out or physical-robot evaluation.
+
 ## Related projects
 
 - [UR5e RL Pick-and-Place](https://github.com/devkumar-projects/ur5e-ReinforcementLearning-pick-and-place) — SAC and HER for grasp-and-place in ROS 2 and Gazebo.
