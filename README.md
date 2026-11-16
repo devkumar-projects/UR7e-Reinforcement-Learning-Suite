@@ -87,6 +87,11 @@ The Target Reaching / Obstacle Avoidance batch requires an external `ur7e_pybull
 
 Each subfolder keeps its own README and commands — this root README is orientation only.
 
+## Interactive notebooks on Kaggle
+
+- [UR7e Reinforcement Learning Training Log Analysis](https://www.kaggle.com/code/devkumarkaggle/ur7e-reinforcement-learning-training-log-analysis) — descriptive analysis of a public simulated training log, not a held-out or physical-robot evaluation.
+- [Generating Robot Drawing Trajectories on CPU](https://www.kaggle.com/code/devkumarkaggle/generating-robot-drawing-trajectories-on-cpu) — reproducible samples from the geometric trajectory generator, without a simulator.
+
 ## Related projects
 
 - [UR5e RL Pick-and-Place](https://github.com/devkumar-projects/ur5e-ReinforcementLearning-pick-and-place) — SAC and HER for grasp-and-place in ROS 2 and Gazebo.
