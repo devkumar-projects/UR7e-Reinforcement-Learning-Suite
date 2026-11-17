@@ -108,3 +108,8 @@ Each subfolder keeps its own README and commands — this root README is orienta
 ## License
 
 MIT — see [LICENSE](LICENSE).
+
+
+## Interactive data explorer and Hugging Face distribution
+
+The [Engineering Workbench / Run explorer](https://huggingface.co/spaces/devkumarhf/Engineering-Workbench) plots the original Monitor log with selectable fields, trailing windows, per-episode inspection and unchanged CSV/provenance downloads. The [Hugging Face dataset](https://huggingface.co/datasets/devkumarhf/ur7e-line-following-training-log) preserves the raw file and provides a typed, viewer-friendly derivative with an episode index. It distributes the **same 520-episode single simulation run** already on Kaggle; it is not another experiment or a held-out evaluation. Original file SHA-256: `ac08bd9bae19f6883adfe51203ce7a759d8cea39fd3fcbf0ec6f3ad290b99814`. The upstream MIT notice is retained.
