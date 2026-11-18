@@ -1,0 +1,170 @@
+{
+  "date": "2026-11-18",
+  "checkpoint_sha256": "c4da7cb46867354f4c4f2b397e1a0b6822792fb7725092c8dbc4584e2d610425",
+  "python": "3.12.3",
+  "platform": "Linux-7.3.4-3-t2-noble-x86_64-with-glibc2.39",
+  "versions": {
+    "numpy": "1.26.4",
+    "torch": "2.12.1+cu130",
+    "stable_baselines3": "2.8.0",
+    "gymnasium": "1.2.3",
+    "ikpy": "3.4.2",
+    "matplotlib": "3.9.4"
+  },
+  "device": "cpu",
+  "torch_threads": 1,
+  "elapsed_seconds": 38.53,
+  "protocol": "100 prespecified seeded trajectories, balanced over five shape generators; paired controllers and sensor-noise conditions; no retraining. Training seed history unavailable: exact disjointness from original training cannot be certified.",
+  "conditions": [
+    {
+      "controller": "sac",
+      "sensor_noise": 0.0,
+      "episodes": 100,
+      "strict_completed": 93,
+      "completion_rate": 0.93,
+      "completion_wilson_95": [
+        0.8625048526092651,
+        0.9656807389327273
+      ],
+      "acquisition_rate": 1.0,
+      "mean_tracking_rms_mm_acquired": 5.214003103954205,
+      "mean_tracking_rms_mm_completed": 5.098132646664121,
+      "original_flag_false_positives": 7,
+      "mean_progress_fraction": 1.0,
+      "median_episode_action_latency_ms": 0.277023,
+      "stops": {
+        "completed": 93,
+        "timeout": 0,
+        "stagnation": 0,
+        "off_path": 0,
+        "endpoint_tolerance_not_met": 7,
+        "other": 0
+      }
+    },
+    {
+      "controller": "dls",
+      "sensor_noise": 0.0,
+      "episodes": 100,
+      "strict_completed": 90,
+      "completion_rate": 0.9,
+      "completion_wilson_95": [
+        0.8256343384950865,
+        0.9447708629393249
+      ],
+      "acquisition_rate": 1.0,
+      "mean_tracking_rms_mm_acquired": 2.375824664437354,
+      "mean_tracking_rms_mm_completed": 2.1659220330534588,
+      "original_flag_false_positives": 10,
+      "mean_progress_fraction": 1.0,
+      "median_episode_action_latency_ms": 0.6799580000000001,
+      "stops": {
+        "completed": 90,
+        "timeout": 0,
+        "stagnation": 0,
+        "off_path": 0,
+        "endpoint_tolerance_not_met": 10,
+        "other": 0
+      }
+    },
+    {
+      "controller": "sac",
+      "sensor_noise": 0.002,
+      "episodes": 100,
+      "strict_completed": 92,
+      "completion_rate": 0.92,
+      "completion_wilson_95": [
+        0.8500189229905127,
+        0.9589065385156194
+      ],
+      "acquisition_rate": 1.0,
+      "mean_tracking_rms_mm_acquired": 5.7500390087797,
+      "mean_tracking_rms_mm_completed": 5.630543793203372,
+      "original_flag_false_positives": 8,
+      "mean_progress_fraction": 1.0,
+      "median_episode_action_latency_ms": 0.26932449999999997,
+      "stops": {
+        "completed": 92,
+        "timeout": 0,
+        "stagnation": 0,
+        "off_path": 0,
+        "endpoint_tolerance_not_met": 8,
+        "other": 0
+      }
+    },
+    {
+      "controller": "dls",
+      "sensor_noise": 0.002,
+      "episodes": 100,
+      "strict_completed": 89,
+      "completion_rate": 0.89,
+      "completion_wilson_95": [
+        0.8136870349691969,
+        0.9374580364293543
+      ],
+      "acquisition_rate": 1.0,
+      "mean_tracking_rms_mm_acquired": 3.5540318419198718,
+      "mean_tracking_rms_mm_completed": 3.3792324427531657,
+      "original_flag_false_positives": 11,
+      "mean_progress_fraction": 1.0,
+      "median_episode_action_latency_ms": 0.68389525,
+      "stops": {
+        "completed": 89,
+        "timeout": 0,
+        "stagnation": 0,
+        "off_path": 0,
+        "endpoint_tolerance_not_met": 11,
+        "other": 0
+      }
+    },
+    {
+      "controller": "sac",
+      "sensor_noise": 0.005,
+      "episodes": 100,
+      "strict_completed": 89,
+      "completion_rate": 0.89,
+      "completion_wilson_95": [
+        0.8136870349691969,
+        0.9374580364293543
+      ],
+      "acquisition_rate": 1.0,
+      "mean_tracking_rms_mm_acquired": 7.556499192378689,
+      "mean_tracking_rms_mm_completed": 7.448523131877891,
+      "original_flag_false_positives": 11,
+      "mean_progress_fraction": 1.0,
+      "median_episode_action_latency_ms": 0.2723985,
+      "stops": {
+        "completed": 89,
+        "timeout": 0,
+        "stagnation": 0,
+        "off_path": 0,
+        "endpoint_tolerance_not_met": 11,
+        "other": 0
+      }
+    },
+    {
+      "controller": "dls",
+      "sensor_noise": 0.005,
+      "episodes": 100,
+      "strict_completed": 87,
+      "completion_rate": 0.87,
+      "completion_wilson_95": [
+        0.7901964855992357,
+        0.9224283257275948
+      ],
+      "acquisition_rate": 1.0,
+      "mean_tracking_rms_mm_acquired": 6.498195514280465,
+      "mean_tracking_rms_mm_completed": 6.39031534001167,
+      "original_flag_false_positives": 13,
+      "mean_progress_fraction": 1.0,
+      "median_episode_action_latency_ms": 0.68932275,
+      "stops": {
+        "completed": 87,
+        "timeout": 0,
+        "stagnation": 0,
+        "off_path": 0,
+        "endpoint_tolerance_not_met": 13,
+        "other": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "samples": 343,
+  "single_max_abs_action_difference": 3.7029385566711426e-06,
+  "batch_max_abs_action_difference": 3.3476389944553375e-06,
+  "tolerance": 0.0001,
+  "reference": "Original Stable-Baselines3 deterministic SAC.predict on CPU",
+  "format": "NumPy NPZ; allow_pickle=False",
+  "export": "Deterministic mean actor only; original stochastic policy and optimizers retained in best_model.zip."
+}

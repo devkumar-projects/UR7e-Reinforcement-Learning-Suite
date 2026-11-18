@@ -1,0 +1,17 @@
+{
+  "author": "Dev Kumar",
+  "upstream_repository": "https://github.com/devkumar-projects/UR7e-Reinforcement-Learning-Suite",
+  "source_commit": "fbba2e4ef768219b7f925c091ff027d025883500",
+  "source_directory": "line-follower-simulation-simple",
+  "checkpoint": "models_traj/best_model.zip",
+  "checkpoint_sha256": "c4da7cb46867354f4c4f2b397e1a0b6822792fb7725092c8dbc4584e2d610425",
+  "release_changes": [
+    "Removed hardcoded ~/ur7e_ws import precedence for portable environment imports.",
+    "Added independent seeded evaluation, strict completion checks, DLS baseline and exported deterministic actor."
+  ],
+  "training_data": "Procedurally generated trajectories in a kinematic environment; original training RNG seed and exact trajectory sequence are not recoverable from this checkpoint.",
+  "original_training_steps": 1900000,
+  "new_training_steps": 0,
+  "hardware_evaluation": false,
+  "date": "2026-11-18"
+}

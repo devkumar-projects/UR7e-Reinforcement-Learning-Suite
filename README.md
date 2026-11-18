@@ -5,7 +5,7 @@
 ![RL](https://img.shields.io/badge/RL-SAC%20%7C%20PPO%20%7C%20HER-orange)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-Reinforcement learning for a Universal Robots **UR7e** cobot: line following (simulation and real sim-to-real deployment), target reaching, and obstacle avoidance — with kinematic tools, sensor fusion (EKF), and a scientific SAC-vs-PPO comparison.
+Reinforcement learning for a Universal Robots **UR7e** cobot: line following (simulation and a partial hardware implementation), target reaching, and obstacle avoidance — with kinematic tools, sensor fusion (EKF), and a SAC-vs-PPO experiment.
 
 <p align="center">
   <a href="https://youtube.com/shorts/--WNZJovDO4?feature=share">
@@ -34,6 +34,15 @@ And
   <em>▶️ <a href="https://youtube.com/shorts/vd7ZUFQKB6c?feature=share">Watch the full simulation on YouTube</a></em>
 </p>
 
+
+
+## Reusable policy and reproducible evaluation
+
+The frozen simple-environment SAC checkpoint is now available as a [Hugging Face model](https://huggingface.co/devkumarhf/ur7e-sac-line-following), with a portable NumPy actor, source provenance, environment files and measured CPU evaluation. [Run actual browser-local inference](https://huggingface.co/spaces/devkumarhf/UR7e-Policy-Lab) or inspect the [Kaggle benchmark notebook](https://www.kaggle.com/code/devkumarkaggle/ur7e-sac-vs-dls-reproducible-policy-benchmark) and [evaluation dataset](https://www.kaggle.com/datasets/devkumarkaggle/ur7e-sac-vs-dls-seeded-kinematic-benchmark).
+
+The 2026-11-18 experiment comprises 100 prespecified trajectories × 2 controllers × 3 noise conditions. With no added noise, strict endpoint completion is 93/100 for SAC and 90/100 for fixed DLS, while mean tracking RMS across acquired episodes is 5.21 mm and 2.38 mm respectively. The original episode-completed flag can be misleading; the evaluation audits endpoint tolerance separately. These results describe a kinematic benchmark, not hardware validation or a general superiority claim. Historical metrics elsewhere in this repository use different protocols.
+
+Source, controller comparison, tests and reproduction instructions: [`evaluations/frozen-sac-2026-11-18`](evaluations/frozen-sac-2026-11-18).
 
 ## Quick overview
 

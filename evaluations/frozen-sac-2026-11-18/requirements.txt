@@ -1,0 +1,6 @@
+numpy==1.26.4
+gymnasium==1.2.3
+ikpy==3.4.2
+stable-baselines3==2.8.0
+torch>=2.5,<3
+matplotlib>=3.9,<4

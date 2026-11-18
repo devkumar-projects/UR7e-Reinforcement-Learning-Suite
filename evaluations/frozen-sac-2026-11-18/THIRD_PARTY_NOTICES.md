@@ -1,0 +1,3 @@
+## Kinematics attribution
+
+The original generated URDF identifies Universal Robots `ur_description`, with a migration-to-YAML credit to Ludovic Delval. The generated comments are retained verbatim. Upstream description project: https://github.com/UniversalRobots/Universal_Robots_ROS2_Description (Humble branch); redistribution terms are in UR-DESCRIPTION-LICENSE. No meshes are included. Default geometry is not a calibration of an individual physical robot. The project and weights retain their original MIT licence from Dev Kumar's source repository. No endorsement by Universal Robots is implied.
